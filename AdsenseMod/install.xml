@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<!DOCTYPE modification SYSTEM "http://www.simplemachines.org/xml/modification">
+<modification xmlns="http://www.simplemachines.org/xml/modification" xmlns:smf="http://www.simplemachines.org/">
+	<id>Xakiru:AdsenseMod</id>
+	<version>1.0</version>
+
+	<file name="$themedir/BoardIndex.template.php">
+		<operation>
+			<search position="Replace"><![CDATA[// Show the news fader?  (assuming there are things to show...)]]></search>
+			<add><![CDATA[// Adsense Mod by Xakiru.
+		if (!empty($modSettings['headeradsense_enable']))
+			{
+		echo '<br class="clear">
+				<div align="center" >
+					<ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="',$modSettings['headeradsenseclient_text'],'" data-ad-slot="',$modSettings['headeradsenseslot_text'],'"></ins>
+				</div>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<br class="clear">';
+		}
+		// end Adsense Mod by Xakiru.
+		// Show the news fader?  (assuming there are things to show...)
+		]]></add>
+		</operation>
+		<operation>
+			<search position="Replace"><![CDATA[// Here's where the "Info Center" starts...]]></search>
+			<add><![CDATA[// Adsense Mod by Xakiru.
+		if (!empty($modSettings['footeradsense_enable']))
+			{		
+		echo '	<br class="clear">
+				
+				<div align="center" >
+					<ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="',$modSettings['footeradsenseclient_text'],'" data-ad-slot="',$modSettings['footeradsenseslot_text'],'"></ins>
+				</div>				
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<br class="clear">';
+		}
+		if (!empty($modSettings['footeradsense_enable']) || !empty($modSettings['headeradsense_enable']))
+			{		
+		echo '	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>';
+		}	
+		// end Adsense Mod by Xakiru.
+		// Here's where the "Info Center" starts...
+		]]></add>
+		</operation>
+        </file>
+        <file name="$sourcedir/ManageSettings.php">
+		<operation>
+			<search position="before"><![CDATA[		// Mod authors, add any settings UNDER this line. Include a comma at the end of the line and don't remove this statement!!]]></search>
+			<add><![CDATA[
+			// Header Ads Homepage by Xakiru.
+			array('check', 'headeradsense_enable'),
+			array('text', 'headeradsenseclient_text'),
+			array('text', 'headeradsenseslot_text'),
+			// Footer Ads Homepage by Xakiru.
+			array('check', 'footeradsense_enable'),
+			array('text', 'footeradsenseclient_text'),
+			array('text', 'footeradsenseslot_text'),
+			]]></add>
+		</operation>
+	    </file>
+	    </modification>

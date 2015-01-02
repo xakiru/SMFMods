@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE modification SYSTEM "http://www.simplemachines.org/xml/modification">
+<modification xmlns="http://www.simplemachines.org/xml/modification" xmlns:smf="http://www.simplemachines.org/">
+	<id>Xakiru:AnalyticsMod</id>
+	
+	<name>Analytics Mod</name>
+
+	<version>1.0</version>
+
+	<file name="$themedir/languages/Modifications.english.php">
+		<operation>
+			<search position="end" />
+				<add><![CDATA[
+			// Adsense Mod by Xakiru
+$txt['analytics_enable'] = 'Enable Analytics Mod';
+$txt['analyticsmod_trackingid'] = 'Google Analytics tracking number ex. UA-41293708-6';
+]]></add>
+		</operation>
+	</file>
+	</modification>

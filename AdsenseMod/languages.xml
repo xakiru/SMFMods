@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE modification SYSTEM "http://www.simplemachines.org/xml/modification">
+<modification xmlns="http://www.simplemachines.org/xml/modification" xmlns:smf="http://www.simplemachines.org/">
+	<id>Xakiru:AdsenseMod</id>
+	
+	<name>Adsense Mod</name>
+
+	<version>1.0</version>
+
+	<file name="$themedir/languages/Modifications.english.php">
+		<operation>
+			<search position="end" />
+				<add><![CDATA[
+			// Adsense Mod by Xakiru
+$txt['headeradsense_enable'] = 'Enable Header Adsense Home Page';
+$txt['headeradsenseclient_text'] = 'Header Client code ex. ca-pub-7861912642305739';
+$txt['headeradsenseslot_text'] = 'Header Ad Slot code ex. 7517221867';
+$txt['footeradsense_enable'] = 'Enable Footer Adsense Home Page';
+$txt['footeradsenseclient_text'] = 'Footer Client code ex. ca-pub-7861912642305739';
+$txt['footeradsenseslot_text'] = 'Footer Ad Slot code ex. 7517221867';
+]]></add>
+		</operation>
+	</file>
+	</modification>
